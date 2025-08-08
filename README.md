@@ -9,7 +9,7 @@ This project is a visual Rubik's Cube solver built using Python.
 It scrambles a standard 3x3 cube, solves it using a depth-limited DFS algorithm, 
 and animates the solving process using a GUI built with Tkinter.
 
--------------------------------------------------
+----------------------------------------------
 Requirements
 -------------------------------------------------
 • Python 3.8 or higher (Tested on Python 3.13)
