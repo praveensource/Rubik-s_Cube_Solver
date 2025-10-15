@@ -3,7 +3,7 @@ import random
 import tkinter as tk
 import time
 
-# ---------------------- Cube Representation --------------------- #
+
 class Cube:
     def __init__(self):
         self.faces = {
@@ -26,7 +26,7 @@ class Cube:
     def __str__(self):
         return '\n'.join(f"{f}: {self.faces[f]}" for f in "UDFBLR")
 
-# ---------------------- Move Definitions ---------------------- #
+# move definitions
 edge_map = {
     'U': [('B', 0), ('R', 0), ('F', 0), ('L', 0)],
     'D': [('F', 2), ('R', 2), ('B', 2), ('L', 2)],
@@ -88,8 +88,7 @@ def apply_move(cube, move):
             cube.faces[e[0]][pos] = buffer[idx][j]
 
     return cube
-
-# ---------------------- Solver Engine ---------------------- #
+# main solver
 MOVES = ['U', "U'", 'U2', 'D', "D'", 'D2', 'F', "F'", 'F2',
          'B', "B'", 'B2', 'L', "L'", 'L2', 'R', "R'", 'R2']
 
@@ -123,7 +122,7 @@ def solve(cube):
             return result
     return None
 
-# ---------------------- GUI Visualizer ---------------------- #
+# for GUI
 COLOR_MAP = {
     'W': 'white',
     'Y': 'yellow',
@@ -176,7 +175,7 @@ class CubeVisualizer:
         self.root.after(1000, lambda: self.animate_solution(solution))
         self.root.mainloop()
 
-# ---------------------- CLI + Visual Demo ---------------------- #
+# for cli
 def scramble(cube, moves=5):
     sequence = [random.choice(MOVES) for _ in range(moves)]
     for move in sequence:
